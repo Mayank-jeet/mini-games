@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ludo</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_text" class="game_title">Ludo</h1>
+    </header>
+    <main>
+        <!-- Setup: players, humans, computer level -->
+        <section id="setup" class="card">
+            <h2>Game setup</h2>
+            <div class="field"><span>Total players</span><div class="seg" id="seat-seg"></div></div>
+            <div class="field"><span>Human players</span><div class="seg" id="human-seg"></div></div>
+            <div class="field" id="level-field">
+                <span>Computer level</span>
+                <select id="difficulty" class="select">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <p class="summary" id="summary"></p>
+            <button class="btn btn-primary" id="start">Start game</button>
+            <p class="rules muted">
+                Roll a 6 to bring a token out. Race clockwise around the board and up your home column;
+                you need the exact number to reach home. Land on an opponent (not on a ★ safe square) to send
+                it back. A 6, a capture or reaching home gives another roll; three 6s in a row lose the turn.
+                First to bring all 4 tokens home wins.
+            </p>
+        </section>
+
+        <!-- Game -->
+        <section id="game" class="gone">
+            <div class="layout">
+                <div id="board"></div>
+                <aside class="panel card">
+                    <ul id="players"></ul>
+                    <p id="turn"></p>
+                    <div class="dock">
+                    <div class="dice-box">
+                        <div id="dice">⚀</div>
+                        <button id="roll" class="btn btn-primary">Roll dice</button>
+                    </div>
+                    <p id="message" class="muted"></p>
+                    </div>
+                    <div class="panel-buttons">
+                        <button id="restart" class="btn">Restart</button>
+                        <button id="change" class="btn">Change setup</button>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <script src="ludo.js"></script>
+</body>
+</html>

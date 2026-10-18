@@ -1,0 +1,38 @@
+/* Tic Tac Toe only. Shared look comes from ../shared/base.css */
+:root{
+    --cell:clamp(84px,26vw,150px);
+}
+.choices{
+    display:grid;
+    grid-template-columns:repeat(3,var(--cell));
+    gap:clamp(8px,2vw,14px);
+}
+.button{
+    height:var(--cell);
+    width:var(--cell);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:calc(var(--cell) * .6);
+    font-weight:700;
+    color:var(--text);
+    background:color-mix(in srgb,var(--accent) 12%,var(--surface));
+    border:2px solid var(--border);
+    border-radius:16px;
+    cursor:pointer;
+    transition:transform .12s,box-shadow .12s,background .12s;
+}
+.button:disabled{
+    cursor:default;
+}
+@media(hover:hover){
+    .button:not(:disabled):hover{
+        transform:translateY(-3px);
+        background:color-mix(in srgb,var(--accent) 24%,var(--surface));
+        box-shadow:0 8px 18px color-mix(in srgb,var(--accent) 35%,transparent);
+        border-color:var(--accent);
+    }
+}
+.button:not(:disabled):active{
+    transform:scale(.96);
+}

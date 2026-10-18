@@ -1,0 +1,43 @@
+/* Nim only. Shared look comes from ../shared/base.css */
+.second_header{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+}
+.playing_area{
+    width:min(94vw,820px);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:clamp(8px,2vh,16px);
+    padding:clamp(16px,4vh,32px) clamp(10px,4vw,40px);
+    background:color-mix(in srgb,var(--accent) 14%,var(--surface));
+    border:1px solid var(--border);
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+}
+.playing_area > div{
+    display:flex;
+    justify-content:center;
+    gap:clamp(6px,1.6vw,16px);
+}
+.playing_area img{
+    height:clamp(2.2rem,8vw,4.5rem);
+    max-width:min(9vw,80px);
+    object-fit:contain;
+    cursor:pointer;
+    user-select:none;
+    transition:transform .15s;
+}
+@media(hover:hover){
+    .playing_area img:hover{
+        transform:translateY(-4px) scale(1.1);
+    }
+}
+.hint{
+    color:var(--muted);
+    font-size:.9rem;
+    text-align:center;
+}

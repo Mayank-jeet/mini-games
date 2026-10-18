@@ -1,0 +1,14 @@
+/* Game-specific styles ONLY. Page frame, buttons, mode bar, .status, .card,
+   theme fallbacks and .hidden/.gone already come from ../shared/base.css.
+
+   Colors: use var(--bg|surface|surface-hover|border|text|muted|accent|on-accent), or
+       color-mix(in srgb, var(--accent) 20%, var(--surface))
+   Hardcode a color ONLY when it carries gameplay meaning (player pieces, dice...). */
+
+#board{
+    width:min(92vw,480px);
+    aspect-ratio:1;
+    background:color-mix(in srgb,var(--accent) 14%,var(--surface));
+    border:1px solid var(--border);
+    border-radius:18px;
+}

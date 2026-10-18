@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title" class="game_title">Rock Paper Scissor</h1>
+    </header>
+    <main>
+        <div class="reset btn">
+            <i class="fa-solid fa-arrow-rotate-right"></i>
+            <p id="reset_text">RESET</p>
+        </div>
+        <div class="choice">
+            <div class="input" id="rock">
+                <img  src="image_rps\Rock.png" alt="rock">
+            </div>
+            <div class="input" id="paper">
+                <img  src="image_rps\Paper.png" alt="paper">
+            </div>
+            <div class="input" id="scissor">
+                <img  src="image_rps\Scissor.png" alt="scissor">
+            </div>
+        </div>
+        <div class="scores">
+            <div class="score" id="You">
+                <p class="score_numbers" id="player_score">0</p>
+                <p class="identity">You</p>
+            </div>
+            <div class="score" id="Comp">
+                <p class="score_numbers" id="computer_score">0</p>
+                <p class="identity">Computer</p>
+            </div>
+        </div>
+        <div class="result status">
+            <p id="result_text">Decision Pending...</p>
+        </div>
+        <script src="rock_paper_scissor.js"></script>
+    </main>
+</body>
+</html>

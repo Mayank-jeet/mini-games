@@ -1,0 +1,144 @@
+/* ==========================================================
+   shared/base.css  -  loaded by EVERY game, BEFORE its own style.css.
+   Holds everything games have in common. A game's style.css should
+   contain only what is specific to that game's board/pieces.
+   ========================================================== */
+
+/* Fallbacks only: theme.js overrides all of these on <html>. */
+:root{
+    --bg:#0f1220;
+    --surface:#181c30;
+    --surface-hover:#20254a;
+    --border:#2a3055;
+    --text:#eef0ff;
+    --muted:#9aa0c7;
+    --accent:#7c8cff;
+    --on-accent:#0f1220;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",system-ui,-apple-system,sans-serif;
+    -webkit-tap-highlight-color:transparent;
+}
+body{
+    min-height:100vh;
+    min-width:300px;
+    display:flex;
+    flex-direction:column;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* ---------- Page frame ---------- */
+header{
+    flex:none;
+    height:64px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--surface);
+    border-bottom:1px solid var(--border);
+}
+.game_title{
+    font-size:clamp(1.4rem,5vw,2rem);
+    font-weight:700;
+    letter-spacing:1px;
+}
+main{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:22px;
+    padding:22px 12px 40px;
+}
+
+/* ---------- Buttons (pill) ---------- */
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:8px 20px;
+    font:inherit;
+    font-size:1rem;
+    color:var(--text);
+    background:transparent;
+    border:2px solid var(--border);
+    border-radius:999px;
+    cursor:pointer;
+    user-select:none;
+    transition:border-color .15s,background .15s,opacity .15s;
+}
+.btn:hover{
+    border-color:var(--accent);
+    background:color-mix(in srgb,var(--accent) 15%,transparent);
+}
+.btn.active,
+.btn-primary{                 /* keep AFTER :hover so these stay filled */
+    color:var(--on-accent);
+    background:var(--accent);
+    border-color:var(--accent);
+}
+.btn:disabled{
+    opacity:.5;
+    cursor:default;
+}
+.btn-sm{
+    padding:8px 18px;
+    font-size:.95rem;
+}
+
+/* ---------- Mode bar (built by GameKit.modeBar) ---------- */
+.mode_bar{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+.select{
+    padding:8px 12px;
+    font:inherit;
+    font-size:.95rem;
+    color:var(--text);
+    background:var(--surface);
+    border:2px solid var(--border);
+    border-radius:999px;
+    cursor:pointer;
+}
+
+/* ---------- Surfaces ---------- */
+.card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
+}
+/* Message / turn / result box */
+.status{
+    min-width:min(280px,90vw);
+    padding:12px 28px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:var(--surface);
+    border:2px solid var(--accent);
+    border-radius:14px;
+    font-size:clamp(1.05rem,3.2vw,1.4rem);
+    font-weight:600;
+}
+.muted{
+    color:var(--muted);
+}
+
+/* ---------- Visibility helpers ----------
+   .hidden = invisible but keeps its space (no layout jump)
+   .gone   = removed from layout entirely                    */
+.hidden{
+    visibility:hidden;
+}
+.gone,[hidden]{
+    display:none !important;
+}

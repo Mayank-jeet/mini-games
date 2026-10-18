@@ -1,0 +1,67 @@
+/* Rock Paper Scissors only. Shared look comes from ../shared/base.css */
+main{
+    gap:28px;
+}
+.choice{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:clamp(12px,3vw,32px);
+}
+.input{
+    display:flex;
+    padding:clamp(6px,1.5vw,12px);
+    background:color-mix(in srgb,var(--accent) 12%,var(--surface));
+    border:4px solid transparent;
+    border-radius:50%;
+    cursor:pointer;
+    user-select:none;
+    transition:transform .15s,border-color .15s,box-shadow .15s;
+}
+.input img{
+    height:clamp(72px,22vw,140px);
+    width:clamp(72px,22vw,140px);
+}
+@media(hover:hover){
+    .input:hover{
+        transform:translateY(-6px) scale(1.05);
+        border-color:var(--accent);
+        box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 35%,transparent);
+    }
+}
+.input:active{
+    transform:scale(.94);
+    border-color:var(--accent);
+}
+.scores{
+    display:flex;
+    gap:16px;
+}
+.score{
+    width:clamp(110px,30vw,150px);
+    padding:12px 8px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:var(--surface);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:16px;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+}
+.score_numbers{
+    font-size:clamp(2.4rem,8vw,3.8rem);
+    font-weight:700;
+    line-height:1.1;
+}
+.identity{
+    font-size:.95rem;
+    font-weight:600;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+.result{
+    min-width:min(420px,92vw);
+}

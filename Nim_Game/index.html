@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nim Game</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_name" class="game_title">Nim Game</h1>
+    </header>
+    <main>
+            <div class="mode_bar"></div>
+            <div class="second_header">
+                <button id="reset_button" class="btn"><i class="fa-solid fa-arrow-rotate-left"></i>RESET</button>
+                <button id="end_turn" class="btn btn-primary" disabled>END TURN</button>
+                <div class="turn status">
+                    <p id="turn_text">PLAYER 1 TURN</p>
+                </div>
+            </div>
+            <div class="playing_area">
+                <div class="row1">
+                    <img id="11" src="nim_game_images/match_stick.png">
+                </div>
+                <div class="row2">
+                    <img id="21" src="nim_game_images/match_stick.png">
+                    <img id="22" src="nim_game_images/match_stick.png">
+                    <img id="23" src="nim_game_images/match_stick.png">
+                </div>
+                <div class="row3">
+                    <img id="31" src="nim_game_images/match_stick.png">
+                    <img id="32" src="nim_game_images/match_stick.png">
+                    <img id="33" src="nim_game_images/match_stick.png">
+                    <img id="34" src="nim_game_images/match_stick.png">
+                    <img id="35" src="nim_game_images/match_stick.png">
+                </div>
+                <div class="row4">
+                    <img id="41" src="nim_game_images/match_stick.png">
+                    <img id="42" src="nim_game_images/match_stick.png">
+                    <img id="43" src="nim_game_images/match_stick.png">
+                    <img id="44" src="nim_game_images/match_stick.png">
+                    <img id="45" src="nim_game_images/match_stick.png">
+                    <img id="46" src="nim_game_images/match_stick.png">
+                    <img id="47" src="nim_game_images/match_stick.png">
+                </div>
+                <div class="row4">
+                    <img id="51" src="nim_game_images/match_stick.png">
+                    <img id="52" src="nim_game_images/match_stick.png">
+                    <img id="53" src="nim_game_images/match_stick.png">
+                    <img id="54" src="nim_game_images/match_stick.png">
+                    <img id="55" src="nim_game_images/match_stick.png">
+                    <img id="56" src="nim_game_images/match_stick.png">
+                    <img id="57" src="nim_game_images/match_stick.png">
+                    <img id="58" src="nim_game_images/match_stick.png">
+                    <img id="59" src="nim_game_images/match_stick.png">
+                </div>
+            </div>
+        <p class="hint">Take 1–3 sticks per turn · tap END TURN (or press Enter) to finish early</p>
+        <div class="result status hidden">
+            <p id="result_text">RESULT</p>
+        </div>
+    </main>
+    <script src="nim_game.js"></script>
+</body>
+</html>

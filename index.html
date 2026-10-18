@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games Hub</title>
+    <link rel="stylesheet" href="hub.css">
+    <script src="theme.js"></script>
+</head>
+<body>
+    <!-- Theme menu (slides in from the left) -->
+    <button class="theme-btn" id="theme-btn" aria-label="Open theme menu">🎨 Theme</button>
+    <div class="theme-overlay" id="theme-overlay"></div>
+    <aside class="theme-panel" id="theme-panel" aria-label="Theme menu">
+        <div class="panel-head">
+            <h3>Choose a theme</h3>
+            <button class="panel-close" id="theme-close" aria-label="Close theme menu">✕</button>
+        </div>
+        <div class="swatches" id="theme-swatches"></div>
+        <h4 class="theme-group">Custom</h4>
+        <div class="custom">
+            <label class="color-pick">Background <input type="color" id="pick-bg"></label>
+            <label class="color-pick">Accent <input type="color" id="pick-accent"></label>
+        </div>
+    </aside>
+
+    <!-- Home: choose a game -->
+    <section id="home">
+        <header class="hub-header">
+            <h1>🎮 Mini Games Hub</h1>
+            <p>Pick a game and start playing.</p>
+        </header>
+        <main>
+            <div class="toolbar">
+                <input class="search" id="search" type="search" placeholder="Search games…  (press /)" aria-label="Search games" autocomplete="off">
+                <div class="tag-bar" id="tag-bar"></div>
+                <p class="result-count" id="result-count"></p>
+            </div>
+            <div class="game-grid" id="game-grid"></div>
+            <p class="empty hidden" id="empty">No games match your search.</p>
+        </main>
+        <footer class="hub-footer">More games coming soon</footer>
+    </section>
+
+    <!-- Player: the chosen game runs here -->
+    <section id="player" class="hidden">
+        <div class="player-bar">
+            <button class="bar-btn" id="back-btn">← All games</button>
+            <h2 id="player-title"></h2>
+            <a class="bar-btn" id="new-tab" href="#" target="_blank" rel="noopener">Open in new tab ↗</a>
+        </div>
+        <iframe id="game-frame" title="Game" src="about:blank"></iframe>
+    </section>
+
+    <script src="games.js"></script>
+    <script src="hub.js"></script>
+</body>
+</html>

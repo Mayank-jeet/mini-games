@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Snake &amp; Ladder</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../theme.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_text" class="game_title">Snake &amp; Ladder</h1>
+    </header>
+    <main>
+        <!-- Setup: choose players -->
+        <section id="setup" class="card">
+            <h2>How do you want to play?</h2>
+            <div class="mode-buttons">
+                <button class="mode" data-players="2" data-cpu="1">🤖 vs Computer</button>
+                <button class="mode" data-players="2">👥 2 Players</button>
+                <button class="mode" data-players="3">👥 3 Players</button>
+                <button class="mode" data-players="4">👥 4 Players</button>
+            </div>
+            <p class="rules">
+                Roll the dice and race to 100. Ladders take you up, snakes slide you down.
+                You need the exact number to land on 100. Rolling a 6 gives you another turn.
+            </p>
+        </section>
+
+        <!-- Game -->
+        <section id="game" class="hidden">
+            <div class="layout">
+                <div class="board-wrap">
+                    <div id="board">
+                        <div id="cells"></div>
+                        <svg id="overlay" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+                        <div id="tokens"></div>
+                    </div>
+                </div>
+                <aside class="panel card">
+                    <ul id="players"></ul>
+                    <p id="turn"></p>
+                    <div class="dock">
+                    <div class="dice-box">
+                        <div id="dice">⚀</div>
+                        <button id="roll">Roll dice</button>
+                    </div>
+                    <p id="message"></p>
+                    </div>
+                    <div class="panel-buttons">
+                        <button id="restart" class="btn">Restart</button>
+                        <button id="change" class="btn">Change players</button>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <script src="snake_ladder.js"></script>
+</body>
+</html>

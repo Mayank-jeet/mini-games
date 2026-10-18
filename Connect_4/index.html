@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_text" class="game_title">Connect 4</h1>
+    </header>
+    <main>
+        <div class="mode_bar"></div>
+        <button class="reset btn">
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <p>RESET</p>
+        </button>
+        <div class="playing_area">
+            <div class="column col1">
+                <div class="dot" id="00"></div>
+                <div class="dot" id="10"></div>
+                <div class="dot" id="20"></div>
+                <div class="dot" id="30"></div>
+                <div class="dot" id="40"></div>
+                <div class="dot" id="50"></div>
+            </div>
+            <div class="column col2">
+                <div class="dot" id="01"></div>
+                <div class="dot" id="11"></div>
+                <div class="dot" id="21"></div>
+                <div class="dot" id="31"></div>
+                <div class="dot" id="41"></div>
+                <div class="dot" id="51"></div>
+            </div>
+            <div class="column col3">
+                <div class="dot" id="02"></div>
+                <div class="dot" id="12"></div>
+                <div class="dot" id="22"></div>
+                <div class="dot" id="32"></div>
+                <div class="dot" id="42"></div>
+                <div class="dot" id="52"></div>
+            </div>
+            <div class="column col4"> 
+                <div class="dot" id="03"></div>
+                <div class="dot" id="13"></div>
+                <div class="dot" id="23"></div>
+                <div class="dot" id="33"></div>
+                <div class="dot" id="43"></div>
+                <div class="dot" id="53"></div>
+            </div>
+            <div class="column col5">
+                <div class="dot" id="04"></div>
+                <div class="dot" id="14"></div>
+                <div class="dot" id="24"></div>
+                <div class="dot" id="34"></div>
+                <div class="dot" id="44"></div>
+                <div class="dot" id="54"></div>
+            </div>
+            <div class="column col6">
+                <div class="dot" id="05"></div>
+                <div class="dot" id="15"></div>
+                <div class="dot" id="25"></div>
+                <div class="dot" id="35"></div>
+                <div class="dot" id="45"></div>
+                <div class="dot" id="55"></div>
+            </div>
+            <div class="column col7">
+                <div class="dot" id="06"></div>
+                <div class="dot" id="16"></div>
+                <div class="dot" id="26"></div>
+                <div class="dot" id="36"></div>
+                <div class="dot" id="46"></div>
+                <div class="dot" id="56"></div>
+            </div>
+        </div>
+        <div class="result status hidden">
+            <p id="result_text"></p>
+        </div>
+    </main>
+    <script src="connect_4.js"></script>
+</body>
+</html>
