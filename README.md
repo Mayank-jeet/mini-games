@@ -103,4 +103,10 @@ Vanilla JavaScript (ES6+), CSS custom properties and `color-mix()`, with optiona
 
 ---
 
-Built by [Mayank Bhardwaj](https://github.com/Mayank-jeet).
+## Author
+
+### Mayank Jeet
+
+- GitHub: [@Mayank-jeet](https://github.com/Mayank-jeet)
+- LinkedIn: [Mayank Jeet](https://www.linkedin.com/in/mayank-jeet-211583364/)
+  
