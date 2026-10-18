@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_text" class="game_title">Chess</h1>
+    </header>
+    <main>
+        <div id="modes"></div>
+        <div class="mode_bar">
+            <select id="side" class="select" hidden>
+                <option value="w">Play as White</option>
+                <option value="b">Play as Black</option>
+            </select>
+            <button id="new" class="btn btn-sm">New game</button>
+            <button id="undo" class="btn btn-sm">↶ Undo</button>
+            <button id="flip" class="btn btn-sm">⇅ Flip board</button>
+        </div>
+        <div class="layout">
+            <div class="board-wrap">
+                <div id="board"></div>
+                <div id="promo" class="card gone"></div>
+            </div>
+            <aside class="panel card">
+                <div id="status" class="status"></div>
+                <div id="captured"></div>
+                <ol id="moves"></ol>
+            </aside>
+        </div>
+    </main>
+    <script src="chess.js"></script>
+</body>
+</html>

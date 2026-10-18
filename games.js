@@ -55,4 +55,12 @@ const GAMES = [
         path: "Ludo/index.html",
         tags: ["Board", "Dice", "Multiplayer", "vs Computer"],
     },
+    {
+        id: "chess",
+        title: "Chess",
+        icon: "♞♚",
+        desc: "Full chess rules with castling, en passant and promotion. Play a friend or the computer.",
+        path: "Chess/index.html",
+        tags: ["Board", "Strategy", "Multiplayer", "vs Computer"],
+    },
 ];

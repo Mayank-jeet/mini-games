@@ -16,6 +16,7 @@ A collection of small browser games behind one searchable hub. Built with plain 
 | 🔥 **Nim** | 2 players, vs Computer | Easy / Medium / Hard (Hard uses the winning strategy) |
 | 🐍🪜 **Snake & Ladder** | Friends, vs Computer | Yes |
 | 🎲 **Ludo** | 2–4 players, any mix of humans and computers | Easy / Medium / Hard |
+| ♞ **Chess** | 2 players, vs Computer (play White or Black) | Easy / Medium / Hard |
 
 ## Features
 
@@ -52,7 +53,7 @@ mini-games/
 │   ├── game-kit.js     helpers: sleep, rand, pick, playsWell, modeBar
 │   └── README.md       conventions and checklist for new games
 ├── _template/          starter files to copy for a new game
-└── Tic_Tac_Toe/ Connect_4/ Rock_Paper_Scissors/ Nim_Game/ Snake_Ladder/ Ludo/
+└── Tic_Tac_Toe/ Connect_4/ Rock_Paper_Scissors/ Nim_Game/ Snake_Ladder/ Ludo/ Chess/
     └── index.html, style.css, <game>.js   (plus images where needed)
 ```
 
