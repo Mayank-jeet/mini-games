@@ -5,7 +5,7 @@
 //   path  "Folder_Name/index.html"      tags   used by the hub's search + filter chips
 //
 // Reuse existing tags where you can so the chips stay tidy. Used so far:
-//   Board, Strategy, Puzzle, Dice, Casual, Multiplayer, vs Computer
+//   Board, Strategy, Puzzle, Dice, Casual, Word, Multiplayer, vs Computer
 const GAMES = [
     {
         id: "tic-tac-toe",
@@ -62,5 +62,13 @@ const GAMES = [
         desc: "Full chess rules with castling, en passant and promotion. Play a friend or the computer.",
         path: "Chess/index.html",
         tags: ["Board", "Strategy", "Multiplayer", "vs Computer"],
+    },
+    {
+        id: "hangman",
+        title: "Hangman",
+        icon: "🔤🪢",
+        desc: "Guess the word before the drawing is complete. Pick a category or challenge a friend.",
+        path: "Hangman/index.html",
+        tags: ["Word", "Casual", "Multiplayer", "vs Computer"],
     },
 ];

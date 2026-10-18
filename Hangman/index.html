@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_text" class="game_title">Hangman</h1>
+    </header>
+    <main>
+        <div id="modes"></div>
+        <div class="mode_bar">
+            <select id="category" class="select" aria-label="Word category"></select>
+            <button id="hint" class="btn btn-sm">💡 Hint (−1 life)</button>
+            <button id="next" class="btn btn-sm">New word</button>
+        </div>
+
+        <!-- 2 Players: the setter types a secret word here -->
+        <section id="setter" class="card gone">
+            <p id="setter_text"></p>
+            <input id="secret" class="secret" type="password" maxlength="28" autocomplete="off"
+                   spellcheck="false" placeholder="Secret word or phrase" aria-label="Secret word">
+            <p id="setter_error" class="muted"></p>
+            <button id="start" class="btn btn-primary">Start round</button>
+        </section>
+
+        <section id="play" class="layout">
+            <div class="gallows card">
+                <svg id="hang" viewBox="0 0 200 230" role="img" aria-label="Hangman drawing">
+                    <g class="frame">
+                        <line x1="20" y1="215" x2="120" y2="215"/>
+                        <line x1="55" y1="215" x2="55" y2="20"/>
+                        <line x1="55" y1="20" x2="140" y2="20"/>
+                        <line x1="140" y1="20" x2="140" y2="48"/>
+                    </g>
+                    <g class="man">
+                        <circle class="part" cx="140" cy="68" r="20"/>
+                        <line class="part" x1="140" y1="88" x2="140" y2="150"/>
+                        <line class="part" x1="140" y1="105" x2="112" y2="130"/>
+                        <line class="part" x1="140" y1="105" x2="168" y2="130"/>
+                        <line class="part" x1="140" y1="150" x2="118" y2="190"/>
+                        <line class="part" x1="140" y1="150" x2="162" y2="190"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="guess-panel">
+                <div id="word" class="word" aria-live="polite"></div>
+                <p id="wrong" class="muted"></p>
+                <div id="status" class="status"></div>
+                <div id="keys" class="keys"></div>
+            </div>
+        </section>
+        <p id="score" class="muted"></p>
+    </main>
+    <script src="hangman.js"></script>
+</body>
+</html>

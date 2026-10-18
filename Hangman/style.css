@@ -1,0 +1,144 @@
+/* Hangman only. Shared look comes from ../shared/base.css */
+.layout{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap:28px;
+}
+.layout.gone{
+    display:none;
+}
+
+/* ---------- Setter card (2 players) ---------- */
+#setter{
+    width:min(460px,94vw);
+    padding:24px 22px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    text-align:center;
+}
+#setter_text{
+    font-weight:600;
+}
+.secret{
+    width:100%;
+    padding:12px 18px;
+    font:inherit;
+    font-size:1.05rem;
+    color:var(--text);
+    background:var(--bg);
+    border:2px solid var(--border);
+    border-radius:999px;
+    outline:none;
+    text-align:center;
+    transition:border-color .15s;
+}
+.secret:focus{
+    border-color:var(--accent);
+}
+#setter_error{
+    min-height:1.3em;
+    font-size:.9rem;
+}
+
+/* ---------- Drawing ---------- */
+.gallows{
+    width:min(280px,80vw);
+    padding:12px;
+}
+#hang{
+    width:100%;
+    display:block;
+}
+.frame line{
+    stroke:var(--muted);
+    stroke-width:6;
+    stroke-linecap:round;
+}
+.part{
+    stroke:var(--text);
+    stroke-width:5;
+    stroke-linecap:round;
+    fill:none;
+    opacity:0;
+    transition:opacity .25s,stroke .25s;
+}
+.part.show{
+    opacity:1;
+}
+.man.dead .part{                /* gameplay meaning: you lost */
+    stroke:#ef4444;
+}
+
+/* ---------- Word + keyboard ---------- */
+.guess-panel{
+    width:min(480px,94vw);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+}
+.word{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+    min-height:clamp(34px,8vw,48px);
+}
+.ch{
+    width:clamp(22px,6vw,38px);
+    height:clamp(34px,8vw,48px);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding-bottom:2px;
+    font-size:clamp(1.3rem,4.5vw,2rem);
+    font-weight:700;
+    text-transform:uppercase;
+    border-bottom:3px solid var(--accent);
+}
+.ch.gap{
+    border-bottom-color:transparent;
+}
+.ch.missed{                     /* letters you failed to find */
+    color:#ef4444;
+}
+#wrong{
+    min-height:1.3em;
+    font-size:.95rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+#status{
+    min-width:0;
+    width:100%;
+    padding:10px 16px;
+    font-size:1.05rem;
+}
+.keys{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:6px;
+}
+.key{
+    width:clamp(32px,8.4vw,46px);
+    height:clamp(36px,9.4vw,46px);
+    padding:0;
+    font-weight:700;
+    text-transform:uppercase;
+}
+/* Gameplay colors: correct / wrong guesses */
+.key.good:disabled{
+    background:color-mix(in srgb,#22c55e 35%,transparent);
+    border-color:#22c55e;
+    opacity:1;
+}
+.key.bad:disabled{
+    background:color-mix(in srgb,#ef4444 30%,transparent);
+    border-color:#ef4444;
+    opacity:.7;
+}
