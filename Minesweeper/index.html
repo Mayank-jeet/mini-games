@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_text" class="game_title">Minesweeper</h1>
+    </header>
+    <main>
+        <div id="modes"></div>
+        <div class="hud card">
+            <span class="lcd" id="mines" title="Mines left">010</span>
+            <button id="face" class="btn face" aria-label="New game">😀</button>
+            <span class="lcd" id="time" title="Seconds">000</span>
+        </div>
+        <div class="mode_bar">
+            <button id="flagmode" class="btn btn-sm">🚩 Flag mode: off</button>
+            <span id="best" class="muted"></span>
+        </div>
+        <div class="board-wrap">
+            <div id="board"></div>
+        </div>
+        <div id="status" class="status hidden"></div>
+        <p class="hint muted">Click to dig · right-click or long-press to flag · click a number to open its neighbors once its flags match</p>
+    </main>
+    <script src="minesweeper.js"></script>
+</body>
+</html>

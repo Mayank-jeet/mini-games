@@ -71,4 +71,12 @@ const GAMES = [
         path: "Hangman/index.html",
         tags: ["Word", "Casual", "Multiplayer", "vs Computer"],
     },
+    {
+        id: "minesweeper",
+        title: "Minesweeper",
+        icon: "💣🚩",
+        desc: "Clear the field without hitting a mine. Three sizes, flags, chording and best times.",
+        path: "Minesweeper/index.html",
+        tags: ["Puzzle", "Strategy", "Casual"],
+    },
 ];

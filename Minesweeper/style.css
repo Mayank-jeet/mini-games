@@ -1,0 +1,96 @@
+/* Minesweeper only. Shared look comes from ../shared/base.css */
+:root{
+    --cell:32px;                       /* set by minesweeper.js to fit the screen */
+}
+.hud{
+    min-width:min(320px,92vw);
+    padding:10px 14px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+}
+.lcd{
+    min-width:4.4ch;
+    padding:6px 12px;
+    font-family:"Consolas","Courier New",monospace;
+    font-size:1.6rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-align:center;
+    color:var(--accent);
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:8px;
+}
+.face{
+    padding:4px 14px;
+    font-size:1.6rem;
+    line-height:1.2;
+    border-radius:14px;
+}
+.hint{
+    max-width:min(560px,92vw);
+    font-size:.85rem;
+    text-align:center;
+}
+#best{
+    font-size:.9rem;
+}
+
+/* ---------- Board ---------- */
+.board-wrap{
+    max-width:100%;
+    overflow:auto;                     /* Expert on a narrow phone scrolls sideways */
+    padding:4px;
+}
+#board{
+    display:grid;
+    width:max-content;
+    margin:0 auto;
+    border:3px solid var(--border);
+    border-radius:8px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    touch-action:manipulation;
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
+}
+.cell{
+    width:var(--cell);
+    height:var(--cell);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:calc(var(--cell) * .58);
+    font-weight:800;
+    line-height:1;
+    cursor:pointer;
+    background:color-mix(in srgb,var(--accent) 42%,var(--surface));
+    box-shadow:inset 2px 2px 0 rgba(255,255,255,.22),inset -2px -2px 0 rgba(0,0,0,.28);
+}
+@media(hover:hover){
+    .cell:not(.open):hover{
+        background:color-mix(in srgb,var(--accent) 52%,var(--surface));
+    }
+}
+.cell.open{
+    cursor:default;
+    background:color-mix(in srgb,var(--accent) 8%,var(--surface));
+    box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--border) 75%,transparent);
+}
+.cell.boom{                            /* the mine you hit: gameplay meaning */
+    background:rgba(239,68,68,.75);
+}
+.cell.wrong{
+    background:color-mix(in srgb,#ef4444 35%,var(--surface));
+}
+/* Number colors are gameplay colors (picked to read on light and dark themes) */
+.n1{ color:#3b82f6; }
+.n2{ color:#22c55e; }
+.n3{ color:#ef4444; }
+.n4{ color:#a855f7; }
+.n5{ color:#f97316; }
+.n6{ color:#14b8a6; }
+.n7{ color:#ec4899; }
+.n8{ color:var(--muted); }
