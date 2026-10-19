@@ -19,6 +19,7 @@ A collection of small browser games behind one searchable hub. Built with plain 
 | ♞ **Chess** | 2 players, vs Computer (play White or Black) | Easy / Medium / Hard |
 | 🔤 **Hangman** | vs Computer (pick a category), 2 players (one sets a secret word) | Picks the word; Easy / Medium / Hard = word length |
 | 💣 **Minesweeper** | Solo: Beginner / Intermediate / Expert, best times saved | n/a (solo puzzle) |
+| 🃏 **Memory Match** | Solo (best score saved), 2 players, vs Computer; 6, 8 or 18 pairs | Easy / Medium / Hard = how well it remembers cards |
 
 ## Features
 
@@ -55,7 +56,7 @@ mini-games/
 │   ├── game-kit.js     helpers: sleep, rand, pick, playsWell, modeBar
 │   └── README.md       conventions and checklist for new games
 ├── _template/          starter files to copy for a new game
-└── Tic_Tac_Toe/ Connect_4/ Rock_Paper_Scissors/ Nim_Game/ Snake_Ladder/ Ludo/ Chess/ Hangman/ Minesweeper/
+└── Tic_Tac_Toe/ Connect_4/ Rock_Paper_Scissors/ Nim_Game/ Snake_Ladder/ Ludo/ Chess/ Hangman/ Minesweeper/ Memory_Match/
     └── index.html, style.css, <game>.js   (plus images where needed)
 ```
 

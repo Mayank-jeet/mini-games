@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 id="title_text" class="game_title">Memory Match</h1>
+    </header>
+    <main>
+        <div id="modes"></div>
+        <div class="mode_bar">
+            <select id="size" class="select" aria-label="Board size">
+                <option value="small">Small (6 pairs)</option>
+                <option value="medium" selected>Medium (8 pairs)</option>
+                <option value="large">Large (18 pairs)</option>
+            </select>
+            <button id="new" class="btn btn-sm">New game</button>
+        </div>
+        <div id="hud" class="hud"></div>
+        <div id="board"></div>
+        <div id="status" class="status"></div>
+    </main>
+    <script src="memory_match.js"></script>
+</body>
+</html>

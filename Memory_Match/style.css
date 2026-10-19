@@ -1,0 +1,105 @@
+/* Memory Match only. Shared look comes from ../shared/base.css */
+:root{
+    --card:88px;                       /* set by memory_match.js to fit the screen */
+}
+/* Player colors are gameplay colors (not themed) */
+.m1{ --oc:#3b82f6; }
+.m2{ --oc:#f97316; }
+.ms{ --oc:#22c55e; }
+
+.hud{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    min-height:48px;
+}
+.pill{
+    padding:8px 18px;
+    background:var(--surface);
+    border:2px solid var(--border);
+    border-radius:999px;
+    font-size:.95rem;
+}
+.pill b{
+    font-size:1.1rem;
+}
+.pill.active{
+    border-color:var(--accent);
+    background:var(--surface-hover);
+}
+.pill .dot{
+    display:inline-block;
+    width:12px;
+    height:12px;
+    margin-right:6px;
+    border-radius:50%;
+    background:var(--oc);
+}
+#status{
+    min-width:min(320px,92vw);
+}
+
+/* ---------- Board ---------- */
+#board{
+    display:grid;
+    gap:10px;
+    justify-content:center;
+}
+.card3d{
+    width:var(--card);
+    height:var(--card);
+    padding:0;
+    border:none;
+    background:none;
+    perspective:700px;
+    cursor:pointer;
+}
+.inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transform-style:preserve-3d;
+    transition:transform .35s;
+}
+.card3d.flipped .inner{
+    transform:rotateY(180deg);
+}
+.face{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:14px;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+    user-select:none;
+}
+.cover{
+    font-size:calc(var(--card) * .42);
+    font-weight:700;
+    color:color-mix(in srgb,var(--text) 55%,transparent);
+    background:color-mix(in srgb,var(--accent) 45%,var(--surface));
+    box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--accent) 65%,var(--surface));
+    transition:background .15s;
+}
+@media(hover:hover){
+    .card3d:not(.flipped):hover .cover{
+        background:color-mix(in srgb,var(--accent) 58%,var(--surface));
+    }
+}
+.pic{
+    transform:rotateY(180deg);
+    font-size:calc(var(--card) * .55);
+    background:var(--surface);
+    border:2px solid var(--border);
+}
+.card3d.matched{
+    cursor:default;
+}
+.card3d.matched .pic{
+    border-color:var(--oc);
+    box-shadow:0 0 0 2px var(--oc);
+    background:color-mix(in srgb,var(--oc) 14%,var(--surface));
+}

@@ -79,4 +79,12 @@ const GAMES = [
         path: "Minesweeper/index.html",
         tags: ["Puzzle", "Strategy", "Casual"],
     },
+    {
+        id: "memory-match",
+        title: "Memory Match",
+        icon: "🃏🍎",
+        desc: "Flip cards and find the pairs. Play solo, with a friend, or against a computer with a memory.",
+        path: "Memory_Match/index.html",
+        tags: ["Puzzle", "Casual", "Multiplayer", "vs Computer"],
+    },
 ];
