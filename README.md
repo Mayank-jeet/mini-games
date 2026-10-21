@@ -2,7 +2,7 @@
 
 A collection of small browser games behind one searchable hub. Built with plain **HTML, CSS and JavaScript**: no frameworks, no build step, no dependencies to install. Play solo against the computer or with friends on the same device.
 
-**▶ Live site:** `https://YOUR-SITE.vercel.app` <!-- replace with your deployed URL -->
+**▶ Live site:** https://mini-games-indol.vercel.app
 
 <!-- Add a screenshot or GIF of the hub here, e.g. ![Hub](docs/hub.png) -->
 
