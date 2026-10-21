@@ -20,6 +20,7 @@ A collection of small browser games behind one searchable hub. Built with plain 
 | 🔤 **Hangman** | vs Computer (pick a category), 2 players (one sets a secret word) | Picks the word; Easy / Medium / Hard = word length |
 | 💣 **Minesweeper** | Solo: Beginner / Intermediate / Expert, best times saved | n/a (solo puzzle) |
 | 🃏 **Memory Match** | Solo (best score saved), 2 players, vs Computer; 6, 8 or 18 pairs | Easy / Medium / Hard = how well it remembers cards |
+| 🐥 **Run Run Chicken** | Solo platformer: 3 seasons × 9 levels (easy / medium / hard), stars, scores and unlocks saved. A fan remake inspired by the mobile classic; all art, music and levels are original | n/a (arcade) |
 
 ## Features
 
@@ -56,7 +57,7 @@ mini-games/
 │   ├── game-kit.js     helpers: sleep, rand, pick, playsWell, modeBar
 │   └── README.md       conventions and checklist for new games
 ├── _template/          starter files to copy for a new game
-└── Tic_Tac_Toe/ Connect_4/ Rock_Paper_Scissors/ Nim_Game/ Snake_Ladder/ Ludo/ Chess/ Hangman/ Minesweeper/ Memory_Match/
+└── Tic_Tac_Toe/ Connect_4/ Rock_Paper_Scissors/ Nim_Game/ Snake_Ladder/ Ludo/ Chess/ Hangman/ Minesweeper/ Memory_Match/ Run_Run_Chicken/
     └── index.html, style.css, <game>.js   (plus images where needed)
 ```
 

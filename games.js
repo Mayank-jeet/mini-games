@@ -5,7 +5,7 @@
 //   path  "Folder_Name/index.html"      tags   used by the hub's search + filter chips
 //
 // Reuse existing tags where you can so the chips stay tidy. Used so far:
-//   Board, Strategy, Puzzle, Dice, Casual, Word, Multiplayer, vs Computer
+//   Board, Strategy, Puzzle, Dice, Casual, Word, Arcade, Multiplayer, vs Computer
 const GAMES = [
     {
         id: "tic-tac-toe",
@@ -86,5 +86,13 @@ const GAMES = [
         desc: "Flip cards and find the pairs. Play solo, with a friend, or against a computer with a memory.",
         path: "Memory_Match/index.html",
         tags: ["Puzzle", "Casual", "Multiplayer", "vs Computer"],
+    },
+    {
+        id: "run-run-chicken",
+        title: "Run Run Chicken",
+        icon: "🐥🪙",
+        desc: "Guide the little chick through Summer, Winter and Monsoon worlds: 27 levels of gaps, coins and power-ups to reach Mama Hen.",
+        path: "Run_Run_Chicken/index.html",
+        tags: ["Arcade", "Casual"],
     },
 ];

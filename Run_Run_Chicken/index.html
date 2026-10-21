@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Run Run Chicken</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="rrc.css">
+    <script src="../theme.js"></script>
+    <script src="../shared/game-kit.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="game_title">🐥 Run Run Chicken</h1>
+    </header>
+
+    <main>
+        <!-- Everything lives inside one 16:9 "stage". The canvas paints the world;
+             the HTML screens/HUD/overlays float on top of it. -->
+        <div id="stage">
+            <canvas id="view" width="800" height="450"></canvas>
+
+            <!-- ===== HUD (visible only while playing) ===== -->
+            <div id="hud" class="gone">
+                <div class="hud-left">
+                    <div class="hud-lives"><span class="hud-ico">🐥</span><span>×</span><b id="hud-lives">3</b></div>
+                    <div class="hud-time" id="hud-time">01:30</div>
+                    <div class="hud-loot"><span class="coin-dot"></span><b id="hud-coins">0</b> <span class="gem-dot"></span><b id="hud-gems">0</b></div>
+                </div>
+                <div class="hud-mid">
+                    <div class="hud-track"><i class="hud-flag"></i><i class="hud-mark" id="hud-mark"></i></div>
+                    <div class="hud-powers" id="hud-powers"></div>
+                </div>
+                <div class="hud-right">
+                    <button class="pausebtn" id="btn-pause" data-act="pause" aria-label="Pause">❚❚</button>
+                </div>
+            </div>
+
+            <!-- ===== Main menu ===== -->
+            <section class="screen active" id="screen-menu">
+                <h2 class="rr-title">Run Run<br>Chicken</h2>
+                <p class="rr-sub">Help the little chick find Mama Hen!</p>
+                <div class="rr-row">
+                    <button class="rr-btn big" data-act="play">▶ Play</button>
+                    <button class="rr-btn alt" data-act="settings">⚙ Settings</button>
+                </div>
+            </section>
+
+            <!-- ===== Season select ===== -->
+            <section class="screen" id="screen-seasons">
+                <h2 class="rr-head">Choose a season</h2>
+                <div class="season-grid" id="season-grid"></div>
+                <button class="rr-btn alt small" data-act="menu">← Back</button>
+            </section>
+
+            <!-- ===== Level select ===== -->
+            <section class="screen" id="screen-levels">
+                <h2 class="rr-head" id="levels-title">Summer</h2>
+                <p class="rr-sub small" id="levels-sub"></p>
+                <div class="level-groups" id="level-groups"></div>
+                <button class="rr-btn alt small" data-act="seasons">← Seasons</button>
+            </section>
+
+            <!-- ===== Settings ===== -->
+            <section class="screen" id="screen-settings">
+                <h2 class="rr-head">Settings</h2>
+                <div class="panel settings-list">
+                    <button class="toggle" data-act="toggle" data-key="music"><span>🎵 Music</span><b></b></button>
+                    <button class="toggle" data-act="toggle" data-key="sfx"><span>🔊 Sound effects</span><b></b></button>
+                    <button class="toggle" data-act="toggle" data-key="reduceMotion"><span>🌀 Reduce motion</span><b></b></button>
+                    <button class="toggle" data-act="toggle" data-key="hiVis"><span>🔴 High-visibility hazards</span><b></b></button>
+                    <button class="toggle" data-act="toggle" data-key="assist"><span>🤝 Assist mode (+2 lives, +50% time)</span><b></b></button>
+                </div>
+                <div class="rr-row">
+                    <button class="rr-btn alt small" data-act="reset">🗑 Reset progress</button>
+                    <button class="rr-btn small" data-act="menu">← Back</button>
+                </div>
+            </section>
+
+            <!-- ===== Pause ===== -->
+            <div class="overlay" id="overlay-pause">
+                <div class="sign">
+                    <h3>Paused</h3>
+                    <div class="sign-btns">
+                        <button class="icon-btn" data-act="resume" title="Resume">▶<small>Resume</small></button>
+                        <button class="icon-btn" data-act="restart" title="Restart">↻<small>Restart</small></button>
+                        <button class="icon-btn" data-act="levels" title="Level select">☰<small>Levels</small></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== Level result ===== -->
+            <div class="overlay" id="overlay-result">
+                <div class="sign">
+                    <h3 id="res-title">Level 1 Complete</h3>
+                    <div class="starrow" id="res-stars"></div>
+                    <div class="res-lines" id="res-lines"></div>
+                    <div class="res-score" id="res-score">0</div>
+                    <div class="res-best" id="res-best"></div>
+                    <div class="sign-btns">
+                        <button class="icon-btn" data-act="levels" title="Level select">☰<small>Levels</small></button>
+                        <button class="icon-btn" data-act="restart" title="Retry">↻<small>Retry</small></button>
+                        <button class="icon-btn" data-act="next" id="res-next" title="Next level">⏩<small>Next</small></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rotate-hint">Rotate your phone sideways for a bigger view 📱↻</div>
+        </div>
+
+        <p class="muted controls-hint">Tap / Space / ↑ to jump · tap again in the air to flap · hold to glide · P to pause</p>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/sim.js"></script>
+    <script src="js/art.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>

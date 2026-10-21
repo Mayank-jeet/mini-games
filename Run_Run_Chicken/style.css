@@ -1,0 +1,345 @@
+/* Run Run Chicken only. Shared look comes from ../shared/base.css
+   The game's own art (canvas scene + wooden menus) keeps its cartoon colours;
+   the page around it follows the selected theme.
+   Everything inside the stage is sized in cqw (1% of the stage width) so menus scale with the canvas. */
+main{
+    gap:14px;
+}
+.hint{
+    max-width:min(960px,94vw);
+    font-size:.85rem;
+    text-align:center;
+}
+
+/* ---------- Stage ---------- */
+.stage{
+    position:relative;
+    width:min(960px,100%);
+    aspect-ratio:16 / 9;
+    container-type:inline-size;
+    overflow:hidden;
+    border:3px solid var(--border);
+    border-radius:16px;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    background:#000;
+    touch-action:none;
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
+}
+#game{
+    width:100%;
+    height:100%;
+    display:block;
+}
+.overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2cqw;
+    padding:2cqw;
+    font-family:"Trebuchet MS","Comic Sans MS","Segoe UI",sans-serif;
+}
+.overlay.menu{
+    justify-content:space-between;
+    padding:4cqw 2cqw 5cqw;
+}
+.overlay.sea{
+    background:
+        radial-gradient(circle at 20% 15%,rgba(255,255,255,.35) 0 .8cqw,transparent .9cqw),
+        radial-gradient(circle at 82% 30%,rgba(255,255,255,.3) 0 .6cqw,transparent .7cqw),
+        radial-gradient(circle at 60% 80%,rgba(255,255,255,.25) 0 1cqw,transparent 1.1cqw),
+        linear-gradient(#8fd8ff,#2f8fe0 70%,#1c5fae);
+}
+.overlay.shade{
+    background:rgba(20,10,0,.55);
+}
+
+/* ---------- Chunky art text + wood ---------- */
+.chunky{
+    font-weight:900;
+    color:#fde047;
+    letter-spacing:.1cqw;
+    -webkit-text-stroke:.45cqw #7c2d12;
+    paint-order:stroke fill;
+    text-shadow:0 .5cqw 0 #7c2d12;
+    text-align:center;
+}
+.logo{
+    font-size:9cqw;
+    line-height:1;
+}
+.ctitle{
+    font-size:4.6cqw;
+}
+.wood{
+    background:linear-gradient(#f6dfae,#e5bd7c);
+    border:.5cqw solid #8a4b18;
+    border-radius:1.6cqw;
+    box-shadow:0 .6cqw 0 #6b3a12,inset 0 0 0 .3cqw rgba(255,255,255,.3);
+    color:#6b3a12;
+}
+.stack{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1.6cqw;
+}
+.row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1.6cqw;
+}
+.wbtn{
+    min-width:22cqw;
+    padding:1.1cqw 3cqw;
+    font:inherit;
+    font-size:2.8cqw;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.1cqw;
+    color:#fff7d6;
+    background:linear-gradient(#ffb347,#f0801f);
+    border:.5cqw solid #8a4b18;
+    border-radius:99cqw;
+    box-shadow:0 .6cqw 0 #6b3a12;
+    text-shadow:0 .25cqw 0 #8a4b18;
+    cursor:pointer;
+    transition:transform .1s;
+}
+.wbtn.big{
+    min-width:30cqw;
+    font-size:3.6cqw;
+    background:linear-gradient(#a3e635,#4d9a17);
+}
+.wbtn:hover{
+    transform:translateY(-.3cqw);
+}
+.wbtn:active{
+    transform:translateY(.4cqw);
+    box-shadow:0 .2cqw 0 #6b3a12;
+}
+.wbtn:disabled{
+    opacity:.5;
+    cursor:default;
+}
+.gone{
+    display:none !important;
+}
+
+/* BACK arrow sign */
+.back{
+    position:absolute;
+    left:2cqw;
+    bottom:2cqw;
+    width:15cqw;
+    height:7.5cqw;
+    padding:0 0 0 3.5cqw;
+    font:inherit;
+    font-size:2.4cqw;
+    font-weight:900;
+    color:#8a4b18;
+    background:#f3cf8c;
+    clip-path:polygon(0 50%,26% 0,100% 0,100% 100%,26% 100%);
+    border:none;
+    cursor:pointer;
+}
+.back span{
+    display:block;
+}
+.back:hover{
+    background:#ffe0a0;
+}
+
+/* ---------- Season select ---------- */
+.season-row{
+    display:flex;
+    gap:2.2cqw;
+}
+.season{
+    width:26cqw;
+    padding:1.2cqw;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:.8cqw;
+    font:inherit;
+    cursor:pointer;
+}
+.season canvas{
+    width:100%;
+    border:.4cqw solid #8a4b18;
+    border-radius:1cqw;
+    display:block;
+}
+.season b{
+    font-size:2.8cqw;
+}
+.season small{
+    font-size:1.9cqw;
+    font-weight:700;
+}
+.season:disabled{
+    filter:grayscale(.8) brightness(.85);
+    cursor:default;
+}
+
+/* ---------- Level select carousel ---------- */
+.carousel{
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:1cqw;
+}
+.track{
+    flex:1;
+    display:flex;
+    gap:3cqw;
+    padding:4.8cqw 2cqw 2cqw;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+}
+.track::-webkit-scrollbar{
+    display:none;
+}
+.arrow{
+    width:5cqw;
+    height:5cqw;
+    flex:none;
+    font:inherit;
+    font-size:4cqw;
+    font-weight:900;
+    line-height:1;
+    color:#fff7d6;
+    background:#f0801f;
+    border:.4cqw solid #8a4b18;
+    border-radius:50%;
+    cursor:pointer;
+}
+.lcard{
+    position:relative;
+    flex:0 0 34cqw;
+    scroll-snap-align:center;
+    padding:3cqw 1.6cqw 1.4cqw;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:1cqw;
+    font:inherit;
+    cursor:pointer;
+}
+.lhead{
+    position:absolute;
+    top:-2.6cqw;
+    font-size:4cqw;
+    white-space:nowrap;
+}
+.lcard::before{                         /* little leaf, like the original sign */
+    content:"";
+    position:absolute;
+    top:-3cqw;
+    right:-1cqw;
+    width:5cqw;
+    height:3cqw;
+    background:#4ade80;
+    border:.35cqw solid #166534;
+    border-radius:100% 0 100% 0;
+}
+.lthumb{
+    width:100%;
+    margin-top:1.2cqw;
+    border:.4cqw solid #8a4b18;
+    border-radius:1cqw;
+    display:block;
+}
+.diff{
+    position:absolute;
+    top:1.1cqw;
+    left:1.6cqw;
+    padding:.1cqw 1cqw;
+    font-size:1.5cqw;
+    font-weight:900;
+    text-transform:uppercase;
+    color:#fff;
+    border-radius:99cqw;
+    z-index:1;
+}
+.diff.d0{ background:#22c55e; }
+.diff.d1{ background:#f59e0b; }
+.diff.d2{ background:#ef4444; }
+.lfoot{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.lstars{
+    font-size:3.4cqw;
+    letter-spacing:.2cqw;
+    color:#f59e0b;
+    text-shadow:0 .2cqw 0 #8a4b18;
+}
+.lstars .off{
+    color:#c9a56c;
+    text-shadow:none;
+}
+.lscore{
+    display:flex;
+    gap:.3cqw;
+}
+.lscore i{
+    width:3cqw;
+    height:3cqw;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-style:normal;
+    font-size:1.9cqw;
+    font-weight:900;
+    color:#92400e;
+    background:#fcd34d;
+    border:.3cqw solid #d97706;
+    border-radius:50%;
+}
+.lock{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:8cqw;
+    background:rgba(60,35,10,.55);
+    border-radius:1.4cqw;
+}
+.lcard:disabled{
+    cursor:default;
+}
+
+/* ---------- Result + settings ---------- */
+.rstars{
+    font-size:8cqw;
+    letter-spacing:1cqw;
+}
+.rstats{
+    padding:1.4cqw 4cqw;
+    font-size:2.5cqw;
+    font-weight:800;
+    line-height:1.6;
+    text-align:center;
+}
+.toggle{
+    min-width:44cqw;
+    padding:.7cqw 3cqw;
+    display:flex;
+    justify-content:space-between;
+    gap:3cqw;
+    font-size:2.4cqw;
+}
+.toggle b{
+    color:#fff7d6;
+}
